@@ -1,0 +1,15 @@
+# Cloudflare Pages configuration
+# https://developers.cloudflare.com/pages/functions/router/
+
+[vars]
+NODE_VERSION = "20"
+
+[build]
+command = "echo 'Static site, no build needed'"
+output = "pages"
+
+# Route all requests to index.html for SPA-style routing
+[[rules]]
+type = "HTML"
+globs = ["**/*.html"]
+delivery = "dist"
